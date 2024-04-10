@@ -6,9 +6,13 @@ import javafx.stage.Stage;
 
 public class controller extends Application {
 	@Override
+	private loginController loginControl = new loginController();
+	private doctorController doctorControl = new doctorController();
+	private patientController patientControl = new patientController();
+	
 	public void start(Stage primaryStage) throws Exception {
 		
-		loginController loginControl = new loginController();
+		
 		
 		Scene loginScene = new Scene(loginControl.showLoginPage(), 800, 400);
 		primaryStage.setScene(loginScene);

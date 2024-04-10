@@ -35,7 +35,9 @@ public class loginController {
         errorLabel.setTextFill(Color.RED);
         loginButton.setOnAction(e ->  {
         	if (validateLogin()) {
-        		//
+        		if (userType.equals("Doctor")) {
+        			
+        		}
         	}
         	else {
         		errorLabel.setText("Invalid Login");
