@@ -11,6 +11,11 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 public class loginController {
+	
+	private String user;
+	private String password;
+	private String userType;
+	
 	public HBox showLoginPage() {
     	HBox mainBox = new HBox(20);
     	Image leftImage = new Image("file:leftPhoto.jpg");
@@ -30,7 +35,7 @@ public class loginController {
         errorLabel.setTextFill(Color.RED);
         loginButton.setOnAction(e ->  {
         	if (validateLogin()) {
-        		//move to the desired page
+        		//
         	}
         	else {
         		errorLabel.setText("Invalid Login");
@@ -45,6 +50,6 @@ public class loginController {
 	
 	
 	private boolean validateLogin() {
-		return true;
+		
 	}
 }
