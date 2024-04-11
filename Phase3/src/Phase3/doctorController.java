@@ -13,15 +13,15 @@ import javafx.stage.Stage;
 public class doctorController {
 	
 	private Stage primaryStage;
-
+	private BorderPane root;
 	public void showDoctorPage() {
-		BorderPane root = new BorderPane();
+		root = new BorderPane();
 		HBox topBox = new HBox(20);
 		
 		Label viewLabel = new Label("Doctor Dashboard");
-		Tab home = new Tab("Home");
-		Tab patientHistory = new Tab("patientHistory");
-		Tab contacts = new Tab("Contacts");
+		Tab home = new Tab("Home", root.setRight(null));
+		Tab patientHistory = new Tab("patientHistory", showPatientHistory());
+		Tab contacts = new Tab("Contacts", showContacts());
 		TabPane tabPane = new TabPane();
 
 		tabPane.getTabs().addAll(home, patientHistory, contacts);
@@ -35,7 +35,10 @@ public class doctorController {
         primaryStage.setScene(scene);
         primaryStage.show();
 		
-		
 
+	}
+
+	private void showPatientHistory() {
+		
 	}
 }

@@ -1,6 +1,5 @@
 package Phase3;
 
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -9,10 +8,11 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class patientView extends Application {
+public class patientController {
 
-    @Override
-    public void start(Stage primaryStage) {
+    private Stage primaryStage;
+
+    public void showPatientView() {
         primaryStage.setTitle("Patient Dashboard");
 
         VBox mainLayout = new VBox(10);
@@ -113,11 +113,4 @@ public class patientView extends Application {
     	return vbox;
     }
     
-    
-    
-    
-
-    public static void main(String[] args) {
-        launch(args);
-    }
 }
