@@ -8,7 +8,7 @@ import javafx.scene.layout.HBox;
 
 public class doctorController {
 	
-	public BorderPane showDoctorPage() {
+	public void showDoctorPage() {
 		BorderPane root = new BorderPane();
 		HBox topBox = new HBox(20);
 		
@@ -22,6 +22,5 @@ public class doctorController {
 		
 		topBox.getChildren().addAll(viewLabel, home, patientHistory, contacts, patientSearch);
 		
-		return root;
 	}
 }
