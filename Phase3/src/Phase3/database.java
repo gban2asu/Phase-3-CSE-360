@@ -34,6 +34,20 @@ public class database {
         return "Unknown"; // Default if not found or error
     }
 
+    // Save Patient info 
+    public void savePatientInfo(String username, String firstName, String lastName, String contactNumber, String emailAddress) {
+    String patientInfoFileName = username + "_PatientInfo.txt";
+    try (PrintWriter out = new PrintWriter(new FileWriter(patientInfoFileName, false))) {
+        out.println("First Name:" + firstName);
+        out.println("Last Name:" + lastName);
+        out.println("Contact Number:" + contactNumber);
+        out.println("Email Address:" + emailAddress);
+    } catch (IOException e) {
+        System.err.println("Error writing to file: " + e.getMessage());
+    }
+}
+
+    
     // Save patient vitals to a file
     public void savePatientVitals(String username, String... vitals) {
         String vitalsFileName = username + "_Vitals.txt";
