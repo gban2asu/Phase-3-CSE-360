@@ -3,7 +3,7 @@ package Phase3;
 import java.io.*;
 import java.util.Scanner;
 
-public class Database {
+public class database {
 
     // Check if patient information file exists
     public static boolean patientExists(String username) {
@@ -95,7 +95,7 @@ public class Database {
     }
 
     // Get user type
-    public static String getUserType(String username) {
+    public String getUserType(String username) {
         String credentialsFileName = username + "_Credentials.txt";
         File credentialsFile = new File(credentialsFileName);
         if (credentialsFile.exists()) {

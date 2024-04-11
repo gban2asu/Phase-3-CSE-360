@@ -21,6 +21,6 @@ public class doctorController {
 		patientSearch.setPromptText("Patient Search");
 		
 		topBox.getChildren().addAll(viewLabel, home, patientHistory, contacts, patientSearch);
-		
+		//TODO implement rest of view
 	}
 }

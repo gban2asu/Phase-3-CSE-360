@@ -23,7 +23,7 @@ public class loginController {
 	private doctorController doctorControl;
 	private nurseController nurseControl;
 	private patientController patientControl;
-	private Database database;
+	private database database;
 	
 	public void showLoginPage() {
     	HBox mainBox = new HBox(20);
@@ -56,7 +56,8 @@ public class loginController {
 	private void validateLogin() {
 		//Somehow get pwd and user
 		
-		if (password.equals(/*password */) && user.equals(/*user */)) {
+		if (database.verifyUserCredentials(user, password)) {
+			userType = database.getUserType(user);
 			if (userType.equals("Doctor")) {
 				doctorControl = new doctorController();
 				doctorControl.showDoctorPage();
