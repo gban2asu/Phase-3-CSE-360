@@ -1,6 +1,5 @@
 package Phase3;
 
-import Phase3.patientView;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
