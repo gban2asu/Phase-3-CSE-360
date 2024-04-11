@@ -66,9 +66,12 @@ public class loginController {
 				nurseControl = new nurseController();
 				nurseControl.showNursePage();
 			}
-			else {
+			else if (userType.equals("Patient")) {
 				patientControl = new patientController();
-				patientControl.showPatientPage();
+				patientControl.showPatientView();
+			}
+			else {
+				errorLabel.setText("Error logging in, Please contact administrator");
 			}
 		}
 		else {

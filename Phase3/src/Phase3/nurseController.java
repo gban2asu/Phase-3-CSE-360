@@ -1,6 +1,5 @@
 package Phase3;
 
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -9,10 +8,13 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class nurseController extends Application {
+public class nurseController{
 
-    public void start(Stage primaryStage) {
-        primaryStage.setTitle("Nurse Dashboard");
+    private Stage primaryStage;
+    private database database;
+
+    public void showNursePage() {
+        
 
         VBox mainLayout = new VBox(10);
         mainLayout.setPadding(new Insets(10));
@@ -25,6 +27,7 @@ public class nurseController extends Application {
         tabs.getTabs().addAll(homeTab, patientHistoryTab, contactsTab);
         mainLayout.getChildren().add(tabs);
 
+        primaryStage.setTitle("Nurse Dashboard");
         Scene scene = new Scene(mainLayout, 800, 600);
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -76,6 +79,7 @@ public class nurseController extends Application {
         	String temperature = temField.getText();
         	String pressure = pressureField.getText();
         	String symptoms = sympField.getText();
+            database.savePatientVitals(name, height, weight, temperature, pressure, symptoms);
         });
         grid.add(saveButton, 1, 6);
 
@@ -100,16 +104,5 @@ public class nurseController extends Application {
         vbox.getChildren().add(contactsArea);
 
         return vbox;
-    }
-
-    private void addFormField(GridPane grid, String label, int row) {
-        grid.add(new Label(label + ":"), 0, row);
-        TextField textField = new TextField();
-        textField.setPromptText("Enter " + label);
-        grid.add(textField, 1, row);
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }

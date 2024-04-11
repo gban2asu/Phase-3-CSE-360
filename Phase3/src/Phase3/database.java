@@ -3,7 +3,7 @@ package Phase3;
 import java.io.*;
 import java.util.Scanner;
 
-public class Database {
+public class database {
 
     // Check if patient information file exists
     public boolean patientExists(String username) {
