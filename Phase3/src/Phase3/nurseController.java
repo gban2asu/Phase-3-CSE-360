@@ -37,16 +37,46 @@ public class nurseController extends Application {
         grid.setPadding(new Insets(10));
 
         
-        addFormField(grid, "Name", 0);
-        addFormField(grid, "Height", 1);
-        addFormField(grid, "Weight", 2);
-        addFormField(grid, "Temperature", 3);
-        addFormField(grid, "Blood Pressure", 4);
-        addFormField(grid, "Symptoms", 5);
+        grid.add(new Label("Name:"), 0, 0);
+        TextField nameField = new TextField();
+        nameField.setPromptText("Enter Name");
+        grid.add(nameField, 1, 0);
+        
+        grid.add(new Label("Height:"), 0, 1);
+        TextField heightField = new TextField();
+        heightField.setPromptText("Enter Height");
+        grid.add(heightField, 1, 1);
+        
+        grid.add(new Label("Weight:"), 0, 2);
+        TextField weightField = new TextField();
+        weightField.setPromptText("Enter Weight");
+        grid.add(weightField, 1, 2);
+        
+        grid.add(new Label("Temperature:"), 0, 3);
+        TextField temField = new TextField();
+        temField.setPromptText("Enter Temperature");
+        grid.add(temField, 1, 3);
+        
+        grid.add(new Label("Blood Pressure:"), 0, 4);
+        TextField pressureField = new TextField();
+        pressureField.setPromptText("Enter Blood Pressure");
+        grid.add(pressureField, 1, 4);
+        
+        grid.add(new Label("Symptoms:"), 0, 5);
+        TextField sympField = new TextField();
+        sympField.setPromptText("Enter Symptoms");
+        grid.add(sympField, 1, 5);
 
         
         Button saveButton = new Button("Save Vitals");
-        saveButton.setOnAction(e -> {/* Implement save logic */});
+        saveButton.setOnAction(e -> {
+        	String name = nameField.getText();
+        	String height = heightField.getText();
+        	String weight = weightField.getText();
+        	String temperature = temField.getText();
+        	String pressure = pressureField.getText();
+        	String symptoms = sympField.getText();
+        });
         grid.add(saveButton, 1, 6);
 
         return grid;
