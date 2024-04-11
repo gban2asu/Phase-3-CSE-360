@@ -35,17 +35,18 @@ public class database {
     }
 
     // Save Patient info 
-    public void savePatientInfo(String username, String firstName, String lastName, String contactNumber, String emailAddress) {
-    String patientInfoFileName = username + "_PatientInfo.txt";
-    try (PrintWriter out = new PrintWriter(new FileWriter(patientInfoFileName, false))) {
-        out.println("First Name:" + firstName);
-        out.println("Last Name:" + lastName);
-        out.println("Contact Number:" + contactNumber);
-        out.println("Email Address:" + emailAddress);
-    } catch (IOException e) {
-        System.err.println("Error writing to file: " + e.getMessage());
+      public void savePatientInfo(String firstName, String lastName, String contactNumber, String emailAddress) {
+            String patientInfoFileName = firstName + "_" + lastName + "_PatientInfo.txt";
+            try (PrintWriter out = new PrintWriter(new FileWriter(patientInfoFileName, false))) {
+                out.println("First Name:" + firstName);
+                out.println("Last Name:" + lastName);
+                out.println("Contact Number:" + contactNumber);
+                out.println("Email Address:" + emailAddress);
+            } catch (IOException e) {
+                System.err.println("Error writing to file: " + e.getMessage());
     }
 }
+
 
     
     // Save patient vitals to a file
