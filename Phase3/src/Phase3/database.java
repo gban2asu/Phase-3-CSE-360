@@ -3,16 +3,16 @@ package Phase3;
 import java.io.*;
 import java.util.Scanner;
 
-public class database {
+public class Database {
 
     // Check if patient information file exists
-    public static boolean patientExists(String username) {
+    public boolean patientExists(String username) {
         File patientInfoFile = new File(username + "_PatientInfo.txt");
         return patientInfoFile.exists();
     }
 
     // Retrieve patient's name by username
-    public static String getPatientName(String username) {
+    public String getPatientName(String username) {
         String patientInfoFileName = username + "_PatientInfo.txt";
         File patientInfoFile = new File(patientInfoFileName);
         if (patientInfoFile.exists()) {
@@ -35,7 +35,7 @@ public class database {
     }
 
     // Save patient vitals to a file
-    public static void savePatientVitals(String username, String... vitals) {
+    public void savePatientVitals(String username, String... vitals) {
         String vitalsFileName = username + "_Vitals.txt";
         try (PrintWriter out = new PrintWriter(new FileWriter(vitalsFileName, true))) {
             for (String vital : vitals) {
@@ -47,7 +47,7 @@ public class database {
     }
 
     // Load patient history, contacts, or insurance information
-    public static String loadPatientInfo(String username, String infoType) {
+    public String loadPatientInfo(String username, String infoType) {
         String fileName = username + "_" + infoType + ".txt";
         StringBuilder info = new StringBuilder();
         try (Scanner scanner = new Scanner(new File(fileName))) {
@@ -62,7 +62,7 @@ public class database {
     }
 
     // Save user credentials and type
-    public static void saveUserCredentials(String username, String password, String userType) {
+    public void saveUserCredentials(String username, String password, String userType) {
         String credentialsFileName = username + "_Credentials.txt";
         try (PrintWriter out = new PrintWriter(new FileWriter(credentialsFileName))) {
             out.println("Username:" + username);
@@ -74,7 +74,7 @@ public class database {
     }
 
     // Verify user credentials
-    public static boolean verifyUserCredentials(String username, String password) {
+    public boolean verifyUserCredentials(String username, String password) {
         String credentialsFileName = username + "_Credentials.txt";
         File credentialsFile = new File(credentialsFileName);
         if (credentialsFile.exists()) {
